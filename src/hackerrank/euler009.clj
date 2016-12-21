@@ -1,6 +1,6 @@
 (ns hackerrank.euler009)
 
-(defn max-prod [n]
+(defn solve* [n]
   (let [ans (for [a (range 1 n)
                   :let [b (quot (- (* 2 a n) (* n n)) (* 2 (- a n)))
                         c (- n a b)]
@@ -13,5 +13,7 @@
   (letfn [(read-int [] (->> (read-line) Integer/parseInt))]
     (loop [t (read-int) ans []]
       (if (> t 0)
-        (recur (dec t) (conj ans (max-prod (read-int))))
+        (recur (dec t) (conj ans (solve* (read-int))))
         (doseq [x ans] (println x))))))
+
+; https://www.hackerrank.com/contests/projecteuler/challenges/euler009
