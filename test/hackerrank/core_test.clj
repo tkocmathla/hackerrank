@@ -1,1 +1,0 @@
-(ns hackerrank.core-test)
